@@ -33,7 +33,8 @@ if(NATIVECPU_USE_OCK)
    #  Date:   Wed Jan 31 14:06:36 2024 +0100
    #  Merge pull request #326 from PietroGhg/pietro/vecz
    #  Integrate vecz in experimental branch
-   GIT_TAG 63f4ba99fc758ffc4268a807b21816b6be1b1b68
+#   GIT_TAG 63f4ba99fc758ffc4268a807b21816b6be1b1b68
+GIT_TAG        main
   )
   FetchContent_GetProperties(oneapi-ck)
   if(NOT oneapi-ck_POPULATED)
@@ -41,16 +42,42 @@ if(NATIVECPU_USE_OCK)
     FetchContent_Populate(oneapi-ck)
     message(STATUS "oneAPI Construction Kit cloned in ${oneapi-ck_SOURCE_DIR}")
     set(CA_NATIVE_CPU 1)
+# <<<<<<< HEAD
     add_subdirectory(${oneapi-ck_SOURCE_DIR} ${oneapi-ck_BINARY_DIR} EXCLUDE_FROM_ALL)
   endif()
   target_compile_definitions(LLVMSYCLLowerIR PRIVATE  NATIVECPU_USE_OCK)
-  target_include_directories(LLVMSYCLLowerIR PRIVATE 
-    ${oneapi-ck_SOURCE_DIR}/modules/compiler/multi_llvm/include
-    ${oneapi-ck_SOURCE_DIR}/modules/cargo/include
-    ${oneapi-ck_SOURCE_DIR}/modules/compiler/vecz/include
-    ${oneapi-ck_SOURCE_DIR}/modules/compiler/utils/include)
+  # target_include_directories(LLVMSYCLLowerIR PRIVATE 
+  #   ${oneapi-ck_SOURCE_DIR}/modules/compiler/multi_llvm/include
+  #   ${oneapi-ck_SOURCE_DIR}/modules/cargo/include
+  #   ${oneapi-ck_SOURCE_DIR}/modules/compiler/vecz/include
+  #   ${oneapi-ck_SOURCE_DIR}/modules/compiler/utils/include)
   target_link_libraries(LLVMSYCLLowerIR PRIVATE compiler-pipeline vecz)
+# =======
+  #   set(CA_ENABLE_TESTS OFF)
+  #   add_subdirectory(${oneapi-ck_SOURCE_DIR} ${oneapi-ck_BINARY_DIR} EXCLUDE_FROM_ALL)
+  # endif()
+  # target_compile_definitions(LLVMSYCLLowerIR PRIVATE  NATIVECPU_USE_OCK)
+  # target_link_libraries(LLVMSYCLLowerIR PRIVATE compiler-pipeline)
+# >>>>>>> Changes required to build with ock main
   target_compile_definitions(pi_native_cpu PRIVATE NATIVECPU_USE_OCK)
 
+  install(TARGETS compiler-pipeline
+  EXPORT;LLVMExports
+          LIBRARY DESTINATION lib${LLVM_LIBDIR_SUFFIX} COMPONENT compiler-pipeline
+          ARCHIVE DESTINATION lib${LLVM_LIBDIR_SUFFIX} COMPONENT compiler-pipeline
+          RUNTIME DESTINATION lib${LLVM_LIBDIR_SUFFIX} COMPONENT compiler-pipeline)
+  set_property(GLOBAL APPEND PROPERTY LLVM_EXPORTS compiler-pipeline)
+  install(TARGETS vecz
+  EXPORT;LLVMExports
+          LIBRARY DESTINATION lib${LLVM_LIBDIR_SUFFIX} COMPONENT vecz
+          ARCHIVE DESTINATION lib${LLVM_LIBDIR_SUFFIX} COMPONENT vecz
+          RUNTIME DESTINATION lib${LLVM_LIBDIR_SUFFIX} COMPONENT vecz)
+  set_property(GLOBAL APPEND PROPERTY LLVM_EXPORTS vecz)
+  install(TARGETS multi_llvm
+  EXPORT;LLVMExports
+          LIBRARY DESTINATION lib${LLVM_LIBDIR_SUFFIX} COMPONENT multi_llvm
+          ARCHIVE DESTINATION lib${LLVM_LIBDIR_SUFFIX} COMPONENT multi_llvm
+          RUNTIME DESTINATION lib${LLVM_LIBDIR_SUFFIX} COMPONENT multi_llvm)
+  set_property(GLOBAL APPEND PROPERTY LLVM_EXPORTS multi_llvm)
 endif()
 set_target_properties(pi_native_cpu PROPERTIES LINKER_LANGUAGE CXX)
