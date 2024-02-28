@@ -62,22 +62,18 @@ GIT_TAG        main
   target_compile_definitions(pi_native_cpu PRIVATE NATIVECPU_USE_OCK)
 
   install(TARGETS compiler-pipeline
-  EXPORT;LLVMExports
+  EXPORT LLVMExports
           LIBRARY DESTINATION lib${LLVM_LIBDIR_SUFFIX} COMPONENT compiler-pipeline
           ARCHIVE DESTINATION lib${LLVM_LIBDIR_SUFFIX} COMPONENT compiler-pipeline
           RUNTIME DESTINATION lib${LLVM_LIBDIR_SUFFIX} COMPONENT compiler-pipeline)
   set_property(GLOBAL APPEND PROPERTY LLVM_EXPORTS compiler-pipeline)
   install(TARGETS vecz
-  EXPORT;LLVMExports
+  EXPORT LLVMExports
           LIBRARY DESTINATION lib${LLVM_LIBDIR_SUFFIX} COMPONENT vecz
           ARCHIVE DESTINATION lib${LLVM_LIBDIR_SUFFIX} COMPONENT vecz
           RUNTIME DESTINATION lib${LLVM_LIBDIR_SUFFIX} COMPONENT vecz)
   set_property(GLOBAL APPEND PROPERTY LLVM_EXPORTS vecz)
-  install(TARGETS multi_llvm
-  EXPORT;LLVMExports
-          LIBRARY DESTINATION lib${LLVM_LIBDIR_SUFFIX} COMPONENT multi_llvm
-          ARCHIVE DESTINATION lib${LLVM_LIBDIR_SUFFIX} COMPONENT multi_llvm
-          RUNTIME DESTINATION lib${LLVM_LIBDIR_SUFFIX} COMPONENT multi_llvm)
+  install(TARGETS multi_llvm EXPORT;LLVMExports)
   set_property(GLOBAL APPEND PROPERTY LLVM_EXPORTS multi_llvm)
 endif()
 set_target_properties(pi_native_cpu PROPERTIES LINKER_LANGUAGE CXX)
