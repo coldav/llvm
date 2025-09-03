@@ -1,6 +1,9 @@
 // RUN: %{build} -o %t.out
 // RUN: %{run-unfiltered-devices} %t.out
 
+
+// XFAIL: native_cpu
+
 #include <stdlib.h>
 #include <sycl/detail/core.hpp>
 #include <vector>

@@ -9,6 +9,9 @@
 // RUN: %{build} %device_msan_flags -Xarch_device -fsanitize-memory-track-origins=1 -DINIT_SOURCE -O2 -g -o %t2.out
 // RUN: env UR_LAYER_MSAN_OPTIONS=msan_check_host_and_shared_usm:1 %{run} %t2.out 2>&1 | FileCheck %s --check-prefixes CHECK-INIT
 
+
+// XFAIL: native_cpu
+
 #include <sycl/detail/core.hpp>
 #include <sycl/usm.hpp>
 

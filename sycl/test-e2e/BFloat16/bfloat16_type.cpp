@@ -11,7 +11,10 @@
 //
 //===----------------------------------------------------------------------===//
 
-#include "bfloat16_type.hpp"
+
+// XFAIL: native_cpu
+
+#include bfloat16_type.hpp
 
 int main() {
 

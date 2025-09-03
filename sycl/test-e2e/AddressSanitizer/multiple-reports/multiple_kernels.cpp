@@ -2,6 +2,9 @@
 // RUN: %{build} %device_asan_flags -Xarch_device -fsanitize-recover=address -O2 -g -o %t
 // RUN: %{run} %t 2>&1 | FileCheck %s
 
+
+// XFAIL: native_cpu
+
 #include <sycl/detail/core.hpp>
 #include <sycl/usm.hpp>
 

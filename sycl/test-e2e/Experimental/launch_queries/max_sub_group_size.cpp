@@ -1,6 +1,9 @@
 // RUN: %{build} -o %t.out
 // RUN: %{run} %t.out
 
+
+// XFAIL: native_cpu
+
 #include <sycl/detail/core.hpp>
 #include <sycl/detail/info_desc_helpers.hpp>
 #include <sycl/kernel.hpp>

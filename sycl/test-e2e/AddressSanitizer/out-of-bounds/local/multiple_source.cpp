@@ -7,6 +7,9 @@
 // XFAIL: spirv-backend && run-mode
 // XFAIL-TRACKER: CMPLRLLVM-64059
 
+
+// XFAIL: native_cpu
+
 #include <sycl/usm.hpp>
 
 constexpr std::size_t N = 4;

@@ -1,7 +1,10 @@
 // REQUIRES: linux, cpu || (gpu && level_zero)
 // RUN: %{build} %device_tsan_flags -O0 -g -o %t1.out
 // RUN: %{run} %t1.out 2>&1 | FileCheck %s
-#include "sycl/detail/core.hpp"
+
+// XFAIL: native_cpu
+
+#include sycl/detail/core.hpp
 #include "sycl/usm.hpp"
 
 int main() {

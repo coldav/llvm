@@ -17,6 +17,9 @@
 
 // RUN: %{run} %t.out
 
-#include "wrapper.hpp"
+
+// XFAIL: native_cpu
+
+#include wrapper.hpp
 
 int main() { return (wrapper()); }

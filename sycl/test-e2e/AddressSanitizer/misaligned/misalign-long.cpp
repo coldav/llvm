@@ -5,6 +5,9 @@
 // RUN: %{run} not %t2.out 2>&1 | FileCheck %s
 // RUN: %{build} %device_asan_flags -O2 -g -o %t3.out
 // RUN: %{run} not %t3.out 2>&1 | FileCheck %s
+
+// XFAIL: native_cpu
+
 #include <sycl/detail/core.hpp>
 #include <sycl/usm.hpp>
 

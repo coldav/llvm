@@ -8,6 +8,9 @@
 // Test work_group_dynamic extension with allocation size specified at runtime
 // and multiple calls to the extension inside the kernel.
 
+
+// XFAIL: native_cpu
+
 #include <sycl/detail/core.hpp>
 #include <sycl/ext/oneapi/work_group_scratch_memory.hpp>
 

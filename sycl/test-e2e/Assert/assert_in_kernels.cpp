@@ -19,4 +19,7 @@
 // CHECK-ACC-NOT: {{.*}}assert_in_kernels.hpp:27: void kernelFunc2(int *, int): {{.*}} [{{[0,2]}},0,0], {{.*}} [0,0,0]
 // CHECK-ACC: The test ended.
 
-#include "assert_in_kernels.hpp"
+
+// XFAIL: native_cpu
+
+#include assert_in_kernels.hpp

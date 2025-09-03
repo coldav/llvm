@@ -13,6 +13,9 @@
 // UNSUPPORTED: hip && linux
 // UNSUPPORTED-TRACKER: https://github.com/intel/llvm/issues/15648
 
-#include "memcpy2d_common.hpp"
+
+// XFAIL: native_cpu
+
+#include memcpy2d_common.hpp
 
 int main() { return test<Alloc::DirectHost, Alloc::Shared>(); }

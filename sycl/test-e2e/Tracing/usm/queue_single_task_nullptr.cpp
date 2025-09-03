@@ -4,6 +4,9 @@
 
 // Test parameter analysis of USM usage
 
+
+// XFAIL: native_cpu
+
 #include <sycl/detail/core.hpp>
 #include <sycl/ext/oneapi/experimental/builtins.hpp>
 

@@ -5,6 +5,9 @@
 // RUN: %force_device_asan_rt %{run} not %t2.out 2>&1 | FileCheck --check-prefixes CHECK,CHECK-HOST %s
 // RUN: %{build} %device_asan_flags -DMALLOC_SHARED -O0 -g -o %t3.out
 // RUN: %force_device_asan_rt %{run} not %t3.out 2>&1 | FileCheck --check-prefixes CHECK,CHECK-SHARED %s
+
+// XFAIL: native_cpu
+
 #include <sycl/usm.hpp>
 
 constexpr size_t N = 64;

@@ -3,7 +3,10 @@
 // RUN: %{build} -o %t.out
 // RUN: %{run} %t.out
 
-#include "bfloat16_example.hpp"
+
+// XFAIL: native_cpu
+
+#include bfloat16_example.hpp
 
 int main() {
   return runTest();

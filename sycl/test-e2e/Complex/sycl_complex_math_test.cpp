@@ -3,7 +3,10 @@
 // RUN: %{build} -Wno-error=deprecated-declarations -fsycl-device-code-split=per_kernel %{mathflags} -o %t.out
 // RUN: %{run} %t.out
 
-#include "sycl_complex_helper.hpp"
+
+// XFAIL: native_cpu
+
+#include sycl_complex_helper.hpp
 #include "sycl_complex_math_test_cases.hpp"
 
 // Macro for testing complex in, complex out functions

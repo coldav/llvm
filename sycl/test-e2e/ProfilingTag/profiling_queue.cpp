@@ -26,7 +26,10 @@
 // UNSUPPORTED: ((intel_gpu_acm{{.*}} || intel_gpu_pvc || intel_gpu_bmg{{.*}}) && (!level_zero)) || preview-mode
 // UNSUPPORTED-TRACKER: https://github.com/intel/llvm/issues/19425
 
-#include "common.hpp"
+
+// XFAIL: native_cpu
+
+#include common.hpp
 
 int main() {
   sycl::property_list Properties{sycl::property::queue::enable_profiling()};

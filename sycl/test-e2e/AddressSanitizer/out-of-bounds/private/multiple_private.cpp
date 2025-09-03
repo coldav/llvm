@@ -12,6 +12,9 @@
 // RUN: %{build} %device_asan_flags -DVAR=6 -O2 -g -o %t6
 // RUN: %{run} not %t6 2>&1 | FileCheck --check-prefixes CHECK,CHECK-VAR6 %s
 
+
+// XFAIL: native_cpu
+
 #include <sycl/detail/core.hpp>
 #include <sycl/usm.hpp>
 

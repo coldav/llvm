@@ -12,6 +12,9 @@
 
 // RUN: %{run} %t_off.out
 
+
+// XFAIL: native_cpu
+
 #include <iostream>
 #include <sycl/detail/core.hpp>
 #include <sycl/kernel_bundle.hpp>

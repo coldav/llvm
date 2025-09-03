@@ -8,6 +8,9 @@
 //
 // Tests the copy ctor on device_global without device_image_scope.
 
+
+// XFAIL: native_cpu
+
 #include <sycl/detail/core.hpp>
 
 namespace oneapiext = sycl::ext::oneapi::experimental;

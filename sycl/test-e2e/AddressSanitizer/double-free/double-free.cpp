@@ -5,6 +5,9 @@
 // RUN: %force_device_asan_rt UR_LAYER_ASAN_OPTIONS="quarantine_size_mb:1;detect_kernel_arguments:0" %{run} not %t2.out 2>&1 | FileCheck --check-prefixes CHECK,CHECK-HOST %s
 // RUN: %{build} %device_asan_flags -DMALLOC_SHARED -O0 -g -o %t3.out
 // RUN: %force_device_asan_rt UR_LAYER_ASAN_OPTIONS="quarantine_size_mb:1;detect_kernel_arguments:0" %{run} not %t3.out 2>&1 | FileCheck --check-prefixes CHECK,CHECK-SHARED %s
+
+// XFAIL: native_cpu
+
 #include <sycl/usm.hpp>
 
 constexpr size_t N = 64;

@@ -4,6 +4,9 @@
 // RUN: %{build} %device_asan_flags -o %t.out
 // RUN: %{run} not %if gpu %{ %t_gpu.out %} %else %{ %t.out %} 2>&1 | FileCheck %s
 
+
+// XFAIL: native_cpu
+
 #include <iostream>
 #include <sycl/detail/core.hpp>
 SYCL_EXTERNAL

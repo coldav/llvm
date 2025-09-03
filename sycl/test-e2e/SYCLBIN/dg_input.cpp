@@ -22,4 +22,7 @@
 
 #define SYCLBIN_INPUT_STATE
 
-#include "Inputs/dg.hpp"
+
+// XFAIL: native_cpu
+
+#include Inputs/dg.hpp

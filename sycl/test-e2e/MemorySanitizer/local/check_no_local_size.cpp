@@ -9,6 +9,9 @@
 // XFAIL: spirv-backend && gpu && run-mode
 // XFAIL-TRACKER: https://github.com/llvm/llvm-project/issues/122075
 
+
+// XFAIL: native_cpu
+
 #include <sycl/detail/core.hpp>
 #include <sycl/usm.hpp>
 

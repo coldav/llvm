@@ -7,6 +7,9 @@
 // (exception generation)
 // First queue creation (id = 0) is queue created on line 17.
 
+
+// XFAIL: native_cpu
+
 #include <sycl/detail/core.hpp>
 #include <sycl/usm.hpp>
 

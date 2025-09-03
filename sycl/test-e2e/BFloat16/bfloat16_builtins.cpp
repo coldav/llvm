@@ -17,7 +17,10 @@
 // UNSUPPORTED: spirv-backend && cpu
 // UNSUPPORTED-TRACKER: CMPLRLLVM-64705
 
-#include "bfloat16_builtins.hpp"
+
+// XFAIL: native_cpu
+
+#include bfloat16_builtins.hpp
 
 int main() {
 

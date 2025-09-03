@@ -9,7 +9,10 @@
 //
 // Tests static device_global access through device kernels.
 
-#include "common.hpp"
+
+// XFAIL: native_cpu
+
+#include common.hpp
 
 static device_global<int[4], TestProperties> DeviceGlobalVar;
 

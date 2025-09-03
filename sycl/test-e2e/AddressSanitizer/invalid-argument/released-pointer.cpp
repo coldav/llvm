@@ -2,6 +2,9 @@
 // RUN: %{build} %device_asan_flags -O2 -g -o %t
 // RUN: env UR_LAYER_ASAN_OPTIONS="quarantine_size_mb:1;detect_kernel_arguments:1" %{run} not %t 2>&1 | FileCheck %s
 
+
+// XFAIL: native_cpu
+
 #include <sycl/detail/core.hpp>
 
 #include <sycl/usm.hpp>

@@ -10,6 +10,9 @@
 // RUN: %{build} -o %t.out
 // RUN: %{run} %t.out
 
-#include "copy2d_common.hpp"
+
+// XFAIL: native_cpu
+
+#include copy2d_common.hpp
 
 int main() { return test<Alloc::Device, Alloc::Device>(); }

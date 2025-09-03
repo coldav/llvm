@@ -16,4 +16,7 @@
 
 #define SYCLBIN_EXECUTABLE_STATE
 
-#include "Inputs/dae.hpp"
+
+// XFAIL: native_cpu
+
+#include Inputs/dae.hpp

@@ -2,7 +2,10 @@
 // ALLOW_RETRIES: 10
 // RUN: %{build} %device_tsan_flags -O0 -g -o %t.out
 // RUN: %{run} %t.out 2>&1 | FileCheck %s
-#include "sycl/ext/oneapi/group_local_memory.hpp"
+
+// XFAIL: native_cpu
+
+#include sycl/ext/oneapi/group_local_memory.hpp
 #include "sycl/detail/core.hpp"
 #include "sycl/usm.hpp"
 

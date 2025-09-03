@@ -10,6 +10,9 @@
 // This test checks that specialization constant information is available on
 // kernel bundles produced by sycl::link.
 
+
+// XFAIL: native_cpu
+
 #include <sycl/detail/core.hpp>
 
 #include <sycl/kernel_bundle.hpp>

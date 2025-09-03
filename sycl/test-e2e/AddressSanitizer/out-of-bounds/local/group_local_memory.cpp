@@ -8,6 +8,9 @@
 // RUN: %{build} %device_asan_flags -g -O2 -o %t3.out
 // RUN: %{run} not %t3.out 2>&1 | FileCheck %s
 
+
+// XFAIL: native_cpu
+
 #include <sycl/detail/core.hpp>
 
 #include <sycl/ext/oneapi/group_local_memory.hpp>

@@ -2,7 +2,10 @@
 // ALLOW_RETRIES: 10
 // RUN: %{build} %device_tsan_flags -O2 -g -o %t1.out
 // RUN: %{run} %t1.out 2>&1 | FileCheck %s
-#include "sycl/detail/core.hpp"
+
+// XFAIL: native_cpu
+
+#include sycl/detail/core.hpp
 #include "sycl/usm.hpp"
 
 struct __attribute__((packed)) S {

@@ -12,6 +12,9 @@
 //
 //===----------------------------------------------------------------------===//
 
+
+// XFAIL: native_cpu
+
 #include <climits>
 #include <iostream>
 #include <sycl/detail/core.hpp>

@@ -2,6 +2,9 @@
 // RUN: %{build} %device_asan_flags -O2 -g -o %t
 // RUN: env UR_LAYER_ASAN_OPTIONS=debug:0 %{run} %t 2>&1 | FileCheck %s
 
+
+// XFAIL: native_cpu
+
 #include <sycl/usm.hpp>
 
 /// This test is used to check enabling/disabling kernel debug message

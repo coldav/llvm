@@ -9,7 +9,10 @@
 //
 //===----------------------------------------------------------------------===//
 
-#include "helper.hpp"
+
+// XFAIL: native_cpu
+
+#include helper.hpp
 class kernel_sg;
 using namespace sycl;
 

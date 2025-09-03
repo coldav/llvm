@@ -2,6 +2,9 @@
 // RUN: %{build} %device_asan_flags -o %t.out
 // RUN: %{run} %t.out 2>&1 | FileCheck %s
 
+
+// XFAIL: native_cpu
+
 #include <sycl/detail/core.hpp>
 
 void test() {

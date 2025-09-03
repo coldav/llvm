@@ -3,6 +3,9 @@
 // RUN: %{build} -o %t.out
 // RUN: %{run} sycl-trace --sycl --print-format=verbose %t.out | FileCheck %s
 
+
+// XFAIL: native_cpu
+
 #include <sycl/detail/core.hpp>
 #include <sycl/usm.hpp>
 

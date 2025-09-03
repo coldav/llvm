@@ -4,6 +4,9 @@
 // UNSUPPORTED: gpu-intel-gen12
 // UNSUPPORTED-TRACKER: https://github.com/intel/llvm/issues/16072
 
+
+// XFAIL: native_cpu
+
 #include <sycl/detail/core.hpp>
 #include <sycl/ext/oneapi/work_group_scratch_memory.hpp>
 #include <sycl/group_barrier.hpp>

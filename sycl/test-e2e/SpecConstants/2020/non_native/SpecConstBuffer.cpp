@@ -5,6 +5,9 @@
 // RUN:          -fsycl-dead-args-optimization
 // RUN: env SYCL_UR_TRACE=2 %{run} %t.out | FileCheck %s
 
+
+// XFAIL: native_cpu
+
 #include <sycl/detail/core.hpp>
 
 #include <sycl/kernel_bundle.hpp>

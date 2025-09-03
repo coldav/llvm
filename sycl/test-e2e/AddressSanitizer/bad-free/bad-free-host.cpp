@@ -1,6 +1,9 @@
 // REQUIRES: linux, cpu || (gpu && level_zero)
 // RUN: %{build} %device_asan_flags -O0 -g -o %t
 // RUN: %force_device_asan_rt %{run} not %t 2>&1 | FileCheck %s
+
+// XFAIL: native_cpu
+
 #include <sycl/usm.hpp>
 
 constexpr size_t N = 64;

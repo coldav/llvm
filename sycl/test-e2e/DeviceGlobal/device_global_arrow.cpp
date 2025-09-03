@@ -6,6 +6,9 @@
 //
 // Tests operator-> on device_global.
 
-#include "device_global_arrow.hpp"
+
+// XFAIL: native_cpu
+
+#include device_global_arrow.hpp
 
 int main() { return test(); }

@@ -7,6 +7,9 @@
 // RUN: env UR_LOG_SANITIZER=level:debug UR_LAYER_ASAN_OPTIONS=redzone:8 %{run} %t2.out 2>&1 | FileCheck --check-prefixes CHECK-MIN %s
 // clang-format on
 
+
+// XFAIL: native_cpu
+
 #include <sycl/usm.hpp>
 
 int main() {

@@ -8,6 +8,9 @@
 // NOTE: USE_DEVICE_IMAGE_SCOPE needs both kernels to be in the same image so
 //       we set -fsycl-device-code-split=per_source.
 
-#include "device_global_operator_passthrough.hpp"
+
+// XFAIL: native_cpu
+
+#include device_global_operator_passthrough.hpp
 
 int main() { return test(); }

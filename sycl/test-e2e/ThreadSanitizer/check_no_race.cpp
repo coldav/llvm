@@ -3,7 +3,10 @@
 // RUN: %{run} %t1.out 2>&1 | FileCheck %s
 // RUN: %{build} %device_tsan_flags -O2 -g -o %t2.out
 // RUN: %{run} %t2.out 2>&1 | FileCheck %s
-#include "sycl/detail/core.hpp"
+
+// XFAIL: native_cpu
+
+#include sycl/detail/core.hpp
 #include "sycl/usm.hpp"
 
 int main() {

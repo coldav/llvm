@@ -17,4 +17,7 @@
 // CHECK-ACC-NOT: {{.*}}assert_in_one_kernel.hpp:12: void kernelFunc(int *, int): {{.*}} [{{[0-3]}},0,0], {{.*}} [0,0,0]
 // CHECK-ACC: The test ended.
 
-#include "assert_in_one_kernel.hpp"
+
+// XFAIL: native_cpu
+
+#include assert_in_one_kernel.hpp

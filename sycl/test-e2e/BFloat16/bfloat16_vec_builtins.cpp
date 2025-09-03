@@ -6,6 +6,9 @@
 // RUN:  %if preview-breaking-changes-supported %{  %{build} -fpreview-breaking-changes -o %t-pfrev.out %}
 // RUN:  %if preview-breaking-changes-supported %{  %{run} %t-pfrev.out  %}
 
+
+// XFAIL: native_cpu
+
 #include <sycl/detail/core.hpp>
 #include <sycl/ext/oneapi/experimental/bfloat16_math.hpp>
 

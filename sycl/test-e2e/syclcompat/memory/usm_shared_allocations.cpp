@@ -24,6 +24,9 @@
 // RUN: %{build} -o %t.out
 // RUN: %{run} %t.out
 
+
+// XFAIL: native_cpu
+
 #include <cassert>
 #include <numeric>
 

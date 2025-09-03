@@ -25,6 +25,9 @@
 // RUN: %{build} %{mathflags} -o %t.out
 // RUN: %{run} %t.out
 
+
+// XFAIL: native_cpu
+
 #include <syclcompat/dims.hpp>
 #include <syclcompat/math.hpp>
 

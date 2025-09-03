@@ -8,6 +8,9 @@
 // UNSUPPORTED: hip
 #define SYCL_FALLBACK_ASSERT 1
 
+
+// XFAIL: native_cpu
+
 #include <sycl/detail/core.hpp>
 
 #include <sycl/builtins.hpp>

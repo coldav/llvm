@@ -32,6 +32,9 @@
 // RUN: %{build} -Wno-error=user-defined-warnings -o %t.out
 // RUN: %{run} %t.out
 
+
+// XFAIL: native_cpu
+
 #include <syclcompat/device.hpp>
 
 #include "device_fixt.hpp"

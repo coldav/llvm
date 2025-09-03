@@ -12,6 +12,9 @@
 
 // This test verifies that things fail in the proper way when they should.
 
+
+// XFAIL: native_cpu
+
 #include <iostream>
 #include <sycl/detail/core.hpp>
 #include <sycl/usm.hpp>

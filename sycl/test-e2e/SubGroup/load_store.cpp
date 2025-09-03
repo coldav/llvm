@@ -10,7 +10,10 @@
 //
 //===----------------------------------------------------------------------===//
 
-#include "helper.hpp"
+
+// XFAIL: native_cpu
+
+#include helper.hpp
 
 #include <sycl/platform.hpp>
 

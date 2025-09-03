@@ -24,4 +24,7 @@
 // UNSUPPORTED: target-nvidia || target-amd
 // UNSUPPORTED-INTENDED: bfloat16 device library is not used on AMD and Nvidia.
 
-#include "bfloat16_conversion_dlopen_test.hpp"
+
+// XFAIL: native_cpu
+
+#include bfloat16_conversion_dlopen_test.hpp

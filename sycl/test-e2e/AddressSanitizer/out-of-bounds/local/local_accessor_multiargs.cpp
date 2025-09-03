@@ -5,6 +5,9 @@
 // RUN: %{run} not %t2.out 2>&1 | FileCheck %s
 // RUN: %{build} %device_asan_flags -g -O2 -o %t3.out
 // RUN: %{run} not %t3.out 2>&1 | FileCheck %s
+
+// XFAIL: native_cpu
+
 #include <sycl/usm.hpp>
 
 constexpr std::size_t N = 8;

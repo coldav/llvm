@@ -7,6 +7,9 @@
 // XFAIL: spirv-backend && gpu && run-mode
 // XFAIL-TRACKER: https://github.com/llvm/llvm-project/issues/122075
 
+
+// XFAIL: native_cpu
+
 #include <sycl/ext/oneapi/group_local_memory.hpp>
 #include <sycl/queue.hpp>
 

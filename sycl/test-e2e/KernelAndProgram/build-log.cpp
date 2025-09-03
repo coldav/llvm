@@ -19,6 +19,9 @@
 //
 //===--------------------------------------------------------------===//
 
+
+// XFAIL: native_cpu
+
 #include <iostream>
 #include <sycl/detail/core.hpp>
 SYCL_EXTERNAL

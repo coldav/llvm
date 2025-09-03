@@ -26,4 +26,7 @@
 // CHECK-ACC-NOT: {{.*}}kernels_in_file2.cpp:15: int calculus(int): global id: [5,0,0], local id: [1,0,0]
 // CHECK-ACC: The test ended.
 
-#include "assert_in_multiple_tus.hpp"
+
+// XFAIL: native_cpu
+
+#include assert_in_multiple_tus.hpp

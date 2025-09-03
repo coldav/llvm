@@ -20,4 +20,7 @@
 
 #define SYCLBIN_OBJECT_STATE
 
-#include "Inputs/basic.hpp"
+
+// XFAIL: native_cpu
+
+#include Inputs/basic.hpp

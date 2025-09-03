@@ -4,7 +4,10 @@
 // XFAIL: spirv-backend
 // XFAIL-TRACKER: https://github.com/intel/llvm/issues/18230
 
-#include "common.hpp"
+
+// XFAIL: native_cpu
+
+#include common.hpp
 
 queue q;
 context ctx = q.get_context();

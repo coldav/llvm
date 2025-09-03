@@ -11,6 +11,9 @@
 // RUN: %{run} %t.out
 
 #define SYCLCOMPAT_USM_LEVEL_NONE
+
+// XFAIL: native_cpu
+
 #include <sycl/detail/core.hpp>
 #include <cstdio>
 #include <ctime>

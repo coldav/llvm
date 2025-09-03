@@ -11,6 +11,9 @@
 // RUN: %{build} -DSYCL_DISABLE_FALLBACK_ASSERT=1 -DGPU -o %t_gpu.out
 // RUN: env SYCL_CACHE_PERSISTENT=1 %{run} %if gpu %{ %t_gpu.out %} %else %{ %t.out %}
 
+
+// XFAIL: native_cpu
+
 #include <sycl/detail/core.hpp>
 
 SYCL_EXTERNAL

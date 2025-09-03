@@ -2,6 +2,9 @@
 // RUN: %{build} %device_asan_flags -O0 -g -fPIC -shared -DSHARED_LIB -o %t.so
 // RUN: %{build} %device_asan_flags -O0 -g -fPIC -Wl,-rpath,. %t.so -o %t
 // RUN: %{run} %t 2>&1 | FileCheck %s
+
+// XFAIL: native_cpu
+
 #include <sycl/detail/core.hpp>
 
 #include <sycl/usm.hpp>

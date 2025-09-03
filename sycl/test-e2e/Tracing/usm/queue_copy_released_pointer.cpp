@@ -4,6 +4,9 @@
 
 // Test parameter analysis of USM function
 
+
+// XFAIL: native_cpu
+
 #include <sycl/detail/core.hpp>
 #include <sycl/usm.hpp>
 

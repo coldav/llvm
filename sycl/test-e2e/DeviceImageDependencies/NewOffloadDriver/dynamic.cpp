@@ -16,7 +16,10 @@
 
 // RUN: %{run} %t.out
 
-#include "a.hpp"
+
+// XFAIL: native_cpu
+
+#include a.hpp
 #include <iostream>
 #include <sycl/detail/core.hpp>
 

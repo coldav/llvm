@@ -9,7 +9,10 @@
 // XFAIL: spirv-backend
 // XFAIL-TRACKER: https://github.com/llvm/llvm-project/issues/122075
 
-#include "sycl/detail/core.hpp"
+
+// XFAIL: native_cpu
+
+#include sycl/detail/core.hpp
 #include <sycl/vector.hpp>
 
 int main() {

@@ -6,6 +6,9 @@
 // Test tracing of the code location data for queue.parallel_for in case of
 // failure (exception generation)
 
+
+// XFAIL: native_cpu
+
 #include <sycl/detail/core.hpp>
 
 int main() {

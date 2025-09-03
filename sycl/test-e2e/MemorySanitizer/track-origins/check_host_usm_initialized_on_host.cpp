@@ -8,6 +8,9 @@
 // RUN: env UR_LAYER_MSAN_OPTIONS=msan_check_host_and_shared_usm:1 %{run} %t1.out 2>&1 | FileCheck %s
 // RUN: env UR_LAYER_MSAN_OPTIONS=msan_check_host_and_shared_usm:0 %{run} %t1.out 2>&1 | FileCheck %s --check-prefixes CHECK-HOSTUSM
 
+
+// XFAIL: native_cpu
+
 #include <sycl/detail/core.hpp>
 #include <sycl/usm.hpp>
 

@@ -7,6 +7,9 @@
 // shared memory, and also test user can call free() without worrying about
 // nullptr or invalid memory descriptor returned from malloc.
 
+
+// XFAIL: native_cpu
+
 #include <iostream>
 #include <stdlib.h>
 

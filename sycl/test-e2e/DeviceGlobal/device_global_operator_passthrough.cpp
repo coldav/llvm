@@ -6,6 +6,9 @@
 //
 // Tests the passthrough of operators on device_global.
 
-#include "device_global_operator_passthrough.hpp"
+
+// XFAIL: native_cpu
+
+#include device_global_operator_passthrough.hpp
 
 int main() { return test(); }

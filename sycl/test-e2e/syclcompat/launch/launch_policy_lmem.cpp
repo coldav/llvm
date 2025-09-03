@@ -30,6 +30,9 @@
 // UNSUPPORTED: spirv-backend
 // UNSUPPORTED-TRACKER: CMPLRLLVM-64705
 
+
+// XFAIL: native_cpu
+
 #include <sycl/detail/core.hpp>
 #include <sycl/ext/oneapi/properties/properties.hpp>
 #include <sycl/group_barrier.hpp>

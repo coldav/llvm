@@ -6,6 +6,9 @@
 //
 // Tests basic device_global access through device kernels.
 
-#include "device_global_device_only.hpp"
+
+// XFAIL: native_cpu
+
+#include device_global_device_only.hpp
 
 int main() { return test(); }

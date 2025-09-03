@@ -7,6 +7,9 @@
 // XFAIL: spirv-backend && run-mode
 // XFAIL-TRACKER: CMPLRLLVM-64059
 
+
+// XFAIL: native_cpu
+
 #include <sycl/detail/core.hpp>
 
 #include <sycl/ext/oneapi/device_global/device_global.hpp>

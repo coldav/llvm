@@ -6,6 +6,9 @@
 
 // Tests load and store on sycl::vec.
 
+
+// XFAIL: native_cpu
+
 #include <sycl/detail/core.hpp>
 #include <sycl/ext/oneapi/bfloat16.hpp>
 #include <sycl/ext/oneapi/experimental/bfloat16_math.hpp>

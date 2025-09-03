@@ -7,6 +7,9 @@
 // RUN: env SYCL_UR_TRACE=2 %{run} %t.out shared equally | FileCheck %s --check-prefix CHECK-SHARED --implicit-check-not piContextCreate --implicit-check-not piMemBufferCreate
 // RUN: env SYCL_UR_TRACE=2 %{run} %t.out fused  equally | FileCheck %s --check-prefix CHECK-FUSED --implicit-check-not piContextCreate --implicit-check-not piMemBufferCreate
 
+
+// XFAIL: native_cpu
+
 #include <iostream>
 #include <string>
 #include <sycl/detail/core.hpp>

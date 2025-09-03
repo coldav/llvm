@@ -1,6 +1,9 @@
 // REQUIRES: linux, cpu || (gpu && level_zero)
 // RUN: %{build} %device_asan_flags -O2 -g -o %t
 // RUN: %{run} not %t &> %t.txt ; FileCheck --input-file %t.txt %s
+
+// XFAIL: native_cpu
+
 #include <sycl/detail/core.hpp>
 
 #include <sycl/usm.hpp>

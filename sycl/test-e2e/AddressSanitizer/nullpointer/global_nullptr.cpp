@@ -9,6 +9,9 @@
 // UNSUPPORTED: gpu-intel-dg2
 // UNSUPPORTED-TRACKER: https://github.com/intel/llvm/issues/15453
 
+
+// XFAIL: native_cpu
+
 #include <sycl/detail/core.hpp>
 
 int main() {

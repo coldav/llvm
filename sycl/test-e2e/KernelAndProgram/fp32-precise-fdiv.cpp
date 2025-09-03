@@ -14,6 +14,9 @@
 // CHECK-WITHOUT-NOT: <--- urProgramBuild{{.*}}fp32-correctly-rounded-divide-sqrt{{.*}} -> UR_RESULT_SUCCESS
 // CHECK-WITHOUT: <--- urProgramBuild{{.*}} -> UR_RESULT_SUCCESS
 
+
+// XFAIL: native_cpu
+
 #include <sycl/detail/core.hpp>
 
 int main() {

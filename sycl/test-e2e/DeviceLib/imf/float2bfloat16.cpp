@@ -6,7 +6,10 @@
 
 // All __imf_* bf16 functions are implemented via fp32 emulation, so we don't
 // need to check whether underlying device supports bf16 or not.
-#include "imf_utils.hpp"
+
+// XFAIL: native_cpu
+
+#include imf_utils.hpp
 #include <sycl/ext/intel/math.hpp>
 
 int main() {

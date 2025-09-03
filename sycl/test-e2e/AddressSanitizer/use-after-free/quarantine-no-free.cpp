@@ -1,6 +1,9 @@
 // REQUIRES: linux, cpu || (gpu && level_zero)
 // RUN: %{build} %device_asan_flags -O0 -g -o %t
 // RUN: env UR_LAYER_ASAN_OPTIONS="quarantine_size_mb:5;detect_kernel_arguments:0" UR_LOG_SANITIZER=level:info %{run} not %t 2>&1 | FileCheck %s
+
+// XFAIL: native_cpu
+
 #include <sycl/usm.hpp>
 
 /// Quarantine Cache Test

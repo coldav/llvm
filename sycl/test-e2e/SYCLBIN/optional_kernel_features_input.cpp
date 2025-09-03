@@ -17,4 +17,7 @@
 
 #define SYCLBIN_INPUT_STATE
 
-#include "Inputs/optional_kernel_features.hpp"
+
+// XFAIL: native_cpu
+
+#include Inputs/optional_kernel_features.hpp

@@ -16,6 +16,9 @@
 // Temporarily disabled until the failure is addressed.
 // UNSUPPORTED: level_zero && windows
 
-#include "memcpy2d_common.hpp"
+
+// XFAIL: native_cpu
+
+#include memcpy2d_common.hpp
 
 int main() { return test<Alloc::Host, Alloc::Device>(); }

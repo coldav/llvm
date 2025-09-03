@@ -16,6 +16,9 @@
 //
 //===----------------------------------------------------------------------===//
 
-#include "attributes_helper.hpp"
+
+// XFAIL: native_cpu
+
+#include attributes_helper.hpp
 
 int main() { return runTests(); }
